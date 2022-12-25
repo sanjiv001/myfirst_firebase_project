@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myfirstproject/authentication/login_screen.dart';
-import 'package:myfirstproject/screen/home_screen.dart';
+import 'package:myfirstproject/screen/homescreen.dart';
 import 'package:myfirstproject/utils/utils.dart';
-import 'package:myfirstproject/widgets/rounbotton.dart';
+import 'package:myfirstproject/widgets/round_bottom.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);

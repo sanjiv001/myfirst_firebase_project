@@ -2,9 +2,9 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/screen/home_screen.dart';
+import 'package:myfirstproject/screen/homescreen.dart';
 import 'package:myfirstproject/utils/utils.dart';
-import 'package:myfirstproject/widgets/rounbotton.dart';
+import 'package:myfirstproject/widgets/round_bottom.dart';
 
 class VerifyCodeScreen extends StatefulWidget {
   final String verificationId;

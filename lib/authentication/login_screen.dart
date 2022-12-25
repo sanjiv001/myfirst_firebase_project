@@ -4,9 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:myfirstproject/authentication/forgotton_password.dart';
 import 'package:myfirstproject/authentication/phone_auth/login_with_phone_number.dart';
 import 'package:myfirstproject/authentication/register_screen.dart';
-import 'package:myfirstproject/screen/home_screen.dart';
+import 'package:myfirstproject/screen/homescreen.dart';
 import 'package:myfirstproject/utils/utils.dart';
-import 'package:myfirstproject/widgets/rounbotton.dart';
+import 'package:myfirstproject/widgets/round_bottom.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -183,7 +183,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Text(
                       'Login with phone',
                       style: TextStyle(
-                          color: Color.fromARGB(255, 139, 3, 3), fontSize: 24),
+                          color: Color.fromARGB(255, 9, 125, 58), fontSize: 24),
                     ),
                   ),
                 ),
