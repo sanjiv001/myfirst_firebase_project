@@ -63,6 +63,24 @@ class _CategoryListState extends State<CategoryList> {
             const SizedBox(
               width: 10,
             ),
+            InkWell(
+              onTap: () {},
+              //   Navigator.of(context).push(
+              //     MaterialPageRoute(
+              //       builder: (ctx) => StreamProvider<List<Vehicule>>.value(
+              //         value: DBServices().getvehicule(type: CarType.moto),
+              //         child: MotoList(),
+              //       ),
+              //     ),
+              //   );
+              // },
+              child: const CircleAvatar(
+                radius: 40,
+                backgroundColor: Colors.lightBlue,
+                child: Icon(FontAwesomeIcons.house,
+                    size: 50, color: Colors.white),
+              ),
+            ),
           ],
         ),
       ),

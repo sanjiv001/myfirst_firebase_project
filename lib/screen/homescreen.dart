@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:myfirstproject/Drawer_section/drawer_header.dart';
 import 'package:myfirstproject/authentication/login_screen.dart';
 import 'package:myfirstproject/screen/botton_navigation_bar.dart';
-import 'package:myfirstproject/utils/utils.dart';
+import 'package:myfirstproject/widgets/utils.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

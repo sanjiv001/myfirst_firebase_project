@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/Apartment_screen/category.dart';
+import 'package:myfirstproject/models/categories.dart';
+import 'package:myfirstproject/screen/category.dart';
 import 'package:myfirstproject/theme/color.dart';
 import 'package:myfirstproject/utils/addscreen/data.dart';
 import 'package:myfirstproject/widgets/category_item.dart';

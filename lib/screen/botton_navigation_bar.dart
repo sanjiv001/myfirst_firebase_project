@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myfirstproject/Apartment_screen/add_apartment.dart';
+import 'package:myfirstproject/post/post_apartment.dart';
 import 'package:myfirstproject/screen/dashboard_sceen.dart';
 import 'package:myfirstproject/theme/color.dart';
 import 'package:myfirstproject/widgets/bottombar_item.dart';
-
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class _RootAppState extends State<RootApp> {
     {
       "icon": Icons.add,
       "active_icon": Icons.add_card_rounded,
-      "page": AddApartment(),
+      "page": AddProductPage(),
       "title": ""
     },
     {
@@ -42,7 +42,7 @@ class _RootAppState extends State<RootApp> {
     {
       "icon": Icons.settings_outlined,
       "active_icon": Icons.settings_rounded,
-      "page": HomePage(),
+      "page": const HomePage(),
       "title": ""
     },
   ];

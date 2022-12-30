@@ -93,13 +93,12 @@ List recents = [
   },
 ];
 
-List categories = [
-  {"name": "All", "icon": FontAwesomeIcons.boxes},
-  {"name": "Apartment", "icon": FontAwesomeIcons.university},
-  {"name": "Room", "icon": FontAwesomeIcons.unlink},
-  {"name": "Building", "icon": FontAwesomeIcons.building},
-  {"name": "House", "icon": FontAwesomeIcons.home},
-];
+// List categories = [
+
+//   {"name": "Apartment", "icon": FontAwesomeIcons.university},
+//   {"name": "Building", "icon": FontAwesomeIcons.building},
+//   {"name": "House", "icon": FontAwesomeIcons.home},
+// ];
 
 var brokers = [
   {
