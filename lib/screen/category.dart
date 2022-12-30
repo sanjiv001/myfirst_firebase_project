@@ -1,7 +1,12 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:myfirstproject/models/categories.dart';
+import 'package:myfirstproject/post/post_list_page.dart';
 
 class CategoryList extends StatefulWidget {
+  static const id = "/CategoryList";
   const CategoryList({super.key});
 
   @override
@@ -9,6 +14,7 @@ class CategoryList extends StatefulWidget {
 }
 
 class _CategoryListState extends State<CategoryList> {
+  List<Category> newList = List.from(categories);
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -18,70 +24,54 @@ class _CategoryListState extends State<CategoryList> {
         decoration: BoxDecoration(
           border: Border.all(color: Colors.lightBlue),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            InkWell(
-              onTap: () {},
-              //   Navigator.of(context).push(
-              //     MaterialPageRoute(
-              //       builder: (ctx) => StreamProvider<List<Vehicule>>.value(
-              //         value: DBServices().getvehicule(type: CarType.moto),
-              //         child: MotoList(),
-              //       ),
-              //     ),
-              //   );
-              // },
-              child: const CircleAvatar(
-                radius: 40,
-                backgroundColor: Colors.lightBlue,
-                child:
-                    Icon(FontAwesomeIcons.house, size: 50, color: Colors.white),
-              ),
-            ),
-            const SizedBox(
-              width: 60,
-            ),
-            InkWell(
-              onTap: () {},
-              //   Navigator.of(context).push(
-              //     MaterialPageRoute(
-              //       builder: (ctx) => StreamProvider<List<Vehicule>>.value(
-              //         value: DBServices().getvehicule(type: CarType.moto),
-              //         child: MotoList(),
-              //       ),
-              //     ),
-              //   );
-              // },
-              child: const CircleAvatar(
-                radius: 40,
-                backgroundColor: Colors.lightBlue,
-                child: Icon(FontAwesomeIcons.buildingCircleArrowRight,
-                    size: 50, color: Colors.white),
-              ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            InkWell(
-              onTap: () {},
-              //   Navigator.of(context).push(
-              //     MaterialPageRoute(
-              //       builder: (ctx) => StreamProvider<List<Vehicule>>.value(
-              //         value: DBServices().getvehicule(type: CarType.moto),
-              //         child: MotoList(),
-              //       ),
-              //     ),
-              //   );
-              // },
-              child: const CircleAvatar(
-                radius: 40,
-                backgroundColor: Colors.lightBlue,
-                child: Icon(FontAwesomeIcons.house,
-                    size: 50, color: Colors.white),
-              ),
-            ),
-          ],
+        child: Column(
+          children: newList
+              .map((e) => Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(
+                          ProductPage.id,
+                          arguments: {
+                            "category": e.name,
+                            "icon": e.icon,
+                          },
+                        );
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [Colors.purple, Colors.blue]),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  e.name as String,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                              Icon(
+                                e.icon,
+                                size: 35,
+                                color: Colors.white,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ))
+              .toList(),
         ),
       ),
     );

@@ -6,6 +6,7 @@ import 'package:myfirstproject/widgets/utils.dart';
 import 'package:myfirstproject/widgets/round_bottom.dart';
 
 class SignUpScreen extends StatefulWidget {
+  static const id = "/SignUpScreen";
   const SignUpScreen({Key? key}) : super(key: key);
 
   @override

@@ -6,6 +6,7 @@ import 'package:myfirstproject/screen/botton_navigation_bar.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const id = "/HomeScreen";
   const HomeScreen({Key? key}) : super(key: key);
 
   @override

@@ -93,12 +93,7 @@ List recents = [
   },
 ];
 
-// List categories = [
 
-//   {"name": "Apartment", "icon": FontAwesomeIcons.university},
-//   {"name": "Building", "icon": FontAwesomeIcons.building},
-//   {"name": "House", "icon": FontAwesomeIcons.home},
-// ];
 
 var brokers = [
   {

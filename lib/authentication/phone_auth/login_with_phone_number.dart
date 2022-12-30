@@ -6,6 +6,7 @@ import 'package:myfirstproject/widgets/round_bottom.dart';
 
 
 class LoginWithPhoneNumber extends StatefulWidget {
+  static const id = "/LoginWithPhoneNumber";
   const LoginWithPhoneNumber({Key? key}) : super(key: key);
 
   @override

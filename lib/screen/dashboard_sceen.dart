@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:myfirstproject/models/categories.dart';
 import 'package:myfirstproject/screen/category.dart';
 import 'package:myfirstproject/theme/color.dart';
-import 'package:myfirstproject/utils/addscreen/data.dart';
+import 'package:myfirstproject/theme/data.dart';
 import 'package:myfirstproject/widgets/category_item.dart';
 import 'package:myfirstproject/widgets/custom_image.dart';
 import 'package:myfirstproject/widgets/custom_textbox.dart';
@@ -13,6 +13,7 @@ import 'package:myfirstproject/widgets/recent_item.dart';
 import 'package:myfirstproject/widgets/recommend_item.dart';
 
 class HomePage extends StatefulWidget {
+  static const id = "/HomePage";
   const HomePage({Key? key}) : super(key: key);
 
   @override

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/Apartment_screen/add_apartment.dart';
 import 'package:myfirstproject/post/post_apartment.dart';
 import 'package:myfirstproject/screen/dashboard_sceen.dart';
 import 'package:myfirstproject/theme/color.dart';
 import 'package:myfirstproject/widgets/bottombar_item.dart';
 
 class RootApp extends StatefulWidget {
+  static const id = "/RootApp";
   const RootApp({Key? key}) : super(key: key);
 
   @override

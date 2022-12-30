@@ -10,6 +10,7 @@ import 'package:myfirstproject/widgets/decoration.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 
 class AddProductPage extends StatefulWidget {
+  static const id = "/AddProductPage";
   @override
   _AddProductPageState createState() => _AddProductPageState();
 }
