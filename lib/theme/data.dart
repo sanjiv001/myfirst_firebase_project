@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 
 var profile = "https://avatars.githubusercontent.com/u/86506519?v=4";
 
@@ -92,8 +90,6 @@ List recents = [
     "is_favorited": false,
   },
 ];
-
-
 
 var brokers = [
   {

@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -51,93 +50,128 @@ class _ProductPageState extends State<ProductPage> {
           }
           final values = snapshot.data!.docs;
 
-          return values.length > 0
-              ? GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                  ),
+          return values.isNotEmpty
+              ? ListView.builder(
                   itemCount: values.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.of(context).pushNamed(
-                            ProductDetailPage.id,
-                            arguments: {
-                              "productname": values[index]['productName'],
-                              "description": values[index]['detail'],
-                              "address": values[index]['address'],
-                              "images": values[index]['imagesUrl'],
-                              "isOnSale": values[index]['isOnSale'],
-                              "isPopular": values[index]['isPopular'],
-                              "price": values[index]['price'],
-                              "quantity": values[index]['quantity'],
-                              "contact": values[index]['contact'],
-                            },
-                          );
-                        },
-                        child: Container(
-                          decoration: decoration(),
-                          child: Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-
-                                child: Image(
-                                    image: CachedNetworkImageProvider(
-                                  values[index]['imagesUrl'][0],
-                                )),
-                                // child:CachedNetworkImageProvider()
-                                // child: Image.network(
-                                //   values[index]['imagesUrl'][0],
-                                //   fit: BoxFit.cover,
-                                //   height: 200,
-                                //   width: 200,
-                                // ),
-                              ),
-                              Positioned(
-                                //top: 0,
-                                bottom: 0,
-                                right: 0,
-                                left: 0,
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: Colors.black87,
-                                  ),
-                                  child: Center(
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Expanded(
-                                          child:
-                                              Text(values[index]['productName'],
-                                                  textAlign: TextAlign.center,
-                                                  style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 15,
-                                                  )),
+                    return Container(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.of(context).pushNamed(
+                                  ProductDetailPage.id,
+                                  arguments: {
+                                    "productname": values[index]['productName'],
+                                    "description": values[index]['detail'],
+                                    "address": values[index]['address'],
+                                    "images": values[index]['imagesUrl'],
+                                    "isOnSale": values[index]['isOnSale'],
+                                    "isPopular": values[index]['isPopular'],
+                                    "price": values[index]['price'],
+                                    "quantity": values[index]['quantity'],
+                                    "contact": values[index]['contact'],
+                                  },
+                                );
+                              },
+                              child: Container(
+                                decoration: decoration(),
+                                child: Stack(
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Image.network(
+                                        values[index]['imagesUrl'][0],
+                                        height: 120,
+                                        width: double.infinity,
+                                      ),
+                                    ),
+                                    Positioned(
+                                      //top: 0,
+                                      bottom: 0,
+                                      right: 0,
+                                      left: 0,
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        width: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color: Color.fromARGB(
+                                              221, 151, 140, 140),
                                         ),
-                                        Expanded(
-                                          child: IconButton(
-                                            onPressed: () {},
-                                            icon:
-                                                Icon(FontAwesomeIcons.cartPlus),
-                                            color: Colors.white,
-                                            iconSize: 20,
+                                        child: Center(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    children: [
+                                                      Container(
+                                                        child: Text(
+                                                            values[index]
+                                                                ['address'],
+                                                            textAlign:
+                                                                TextAlign.start,
+                                                            style: TextStyle(
+                                                              color:
+                                                                  Colors.white,
+                                                              fontSize: 25,
+                                                            )),
+                                                      ),
+                                                      Container(
+                                                        child: Text(
+                                                            values[index]
+                                                                    ['price']
+                                                                .toString(),
+                                                            textAlign:
+                                                                TextAlign.start,
+                                                            style: TextStyle(
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      198,
+                                                                      52,
+                                                                      52),
+                                                              fontSize: 15,
+                                                            )),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                              Expanded(
+                                                child: IconButton(
+                                                  onPressed: () {},
+                                                  icon: Icon(
+                                                      FontAwesomeIcons.edit),
+                                                  color: Color.fromRGBO(
+                                                      255, 255, 255, 1),
+                                                  iconSize: 15,
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: IconButton(
+                                                  onPressed: () {},
+                                                  icon: Icon(
+                                                      FontAwesomeIcons.remove),
+                                                  color: Colors.white,
+                                                  iconSize: 20,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      ],
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
                               ),
-                            ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     );
                   },

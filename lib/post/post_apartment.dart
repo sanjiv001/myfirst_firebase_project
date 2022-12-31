@@ -201,17 +201,17 @@ class _AddProductPageState extends State<AddProductPage> {
                 MaterialButton(
                   shape: const StadiumBorder(),
                   onPressed: () {
-                    save();
-                    // .then((value) {
-                    //   Utils().toastMessage(value.user!.email.toString());
-                    //   Navigator.push(
-                    //       context,
-                    //       MaterialPageRoute(
-                    //           builder: (context) => const HomeScreen()));
-                    // }).onError((error, stackTrace) {
-                    //   debugPrint(error.toString());
-                    //   Utils().toastMessage(error.toString());
-                    // });
+                    save()
+                    .then((value) {
+                      Utils().toastMessage("Posted Successfully!!!");
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()));
+                    }).onError((error, stackTrace) {
+                      debugPrint(error.toString());
+                      Utils().toastMessage(error.toString());
+                    });
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(16.0),
