@@ -16,6 +16,8 @@ class AddProductPage extends StatefulWidget {
 }
 
 class _AddProductPageState extends State<AddProductPage> {
+  bool loading = false;
+
   var categoryC = TextEditingController();
   var productNameC = TextEditingController();
   var detailC = TextEditingController();
@@ -23,9 +25,8 @@ class _AddProductPageState extends State<AddProductPage> {
   var contactC = TextEditingController();
   var addressC = TextEditingController();
   var quantityC = TextEditingController();
-  var onSaleC = TextEditingController();
+  var purposeC = TextEditingController();
   var popularC = TextEditingController();
-  bool isSale = false;
   bool isPopular = false;
   final _key = GlobalKey<FormState>();
   List<Asset> images = <Asset>[];
@@ -44,7 +45,7 @@ class _AddProductPageState extends State<AddProductPage> {
         address: addressC.text,
         quantity: int.parse(quantityC.text),
         imagesUrl: imageUrls,
-        isOnSale: isSale,
+        purpose: purposeC.text,
         isPopular: isPopular,
       ));
     }
@@ -83,6 +84,44 @@ class _AddProductPageState extends State<AddProductPage> {
                       },
                       value: categories[0].name,
                       items: categories
+                          .map((e) => DropdownMenuItem(
+                              value: e.name,
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: Text(
+                                  e.name as String,
+                                ),
+                              )))
+                          .toList()),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  decoration: decoration(),
+                  child: DropdownButtonFormField(
+                      validator: (value) {
+                        if (value == null) {
+                          return 'should not be empty';
+                        }
+                        return null;
+                      },
+                      hint: const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Text('choose purpose'),
+                      ),
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          purposeC.text = value as String;
+                          print(purposeC.text);
+                        });
+                      },
+                      value: purposes[0].name,
+                      items: purposes
                           .map((e) => DropdownMenuItem(
                               value: e.name,
                               child: Padding(
@@ -169,6 +208,15 @@ class _AddProductPageState extends State<AddProductPage> {
                     });
                   },
                 ),
+                SwitchListTile(
+                    title: const Text('Is this product popular'),
+                    value: isPopular,
+                    onChanged: (v) {
+                      setState(() {
+                        isPopular = v;
+                      });
+                    }),
+
                 SizedBox(
                   height: 200,
                   child: Column(
@@ -182,35 +230,49 @@ class _AddProductPageState extends State<AddProductPage> {
                     ],
                   ),
                 ),
-                SwitchListTile(
-                    title: const Text('Is this product popular'),
-                    value: isPopular,
-                    onChanged: (v) {
-                      setState(() {
-                        isPopular = v;
-                      });
-                    }),
-                SwitchListTile(
-                    title: const Text('Is this on Sale'),
-                    value: isSale,
-                    onChanged: (v) {
-                      setState(() {
-                        isSale = v;
-                      });
-                    }),
+                EditField(
+                  lines: 8,
+                  validator: (String? v) {
+                    if (v == null) {
+                      return 'should not be empty';
+                    }
+                    return null;
+                  },
+                  controller: detailC,
+                  hint: 'Enter Details',
+                  onsubmit: (value) {
+                    setState(() {
+                      detailC.text = value!;
+                    });
+                  },
+                ),
+
+                // SwitchListTile(
+                //     title: const Text('Is this on Sale'),
+                //     value: isSale,
+                //     onChanged: (v) {
+                //       setState(() {
+                //         isSale = v;
+                //       });
+                //     }),
                 MaterialButton(
                   shape: const StadiumBorder(),
                   onPressed: () {
-                    save()
-                    .then((value) {
+                    save().then((value) {
                       Utils().toastMessage("Posted Successfully!!!");
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const HomeScreen()));
+                      setState(() {
+                        loading = true;
+                      });
                     }).onError((error, stackTrace) {
                       debugPrint(error.toString());
                       Utils().toastMessage(error.toString());
+                    });
+                    setState(() {
+                      loading = false;
                     });
                   },
                   child: const Padding(

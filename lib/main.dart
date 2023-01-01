@@ -7,6 +7,7 @@ import 'package:myfirstproject/authentication/login_screen.dart';
 import 'package:myfirstproject/authentication/phone_auth/login_with_phone_number.dart';
 import 'package:myfirstproject/authentication/register_screen.dart';
 import 'package:myfirstproject/post/post_apartment.dart';
+import 'package:myfirstproject/post/post_detail_page.dart';
 import 'package:myfirstproject/post/post_list_page.dart';
 import 'package:myfirstproject/screen/dashboard_sceen.dart';
 import 'package:myfirstproject/screen/homescreen.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         LoginWithPhoneNumber.id: (context) => LoginWithPhoneNumber(),
         AddProductPage.id: (context) => AddProductPage(),
         ProductPage.id: (context) => ProductPage(),
+        ProductDetailPage.id: (context) => ProductDetailPage(),
       },
     );
   }

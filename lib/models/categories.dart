@@ -22,3 +22,25 @@ List<Category> categories = [
   ),
 
 ];
+
+
+class Purpose {
+  String? name;
+ 
+  Purpose({@required this.name});
+}
+
+List<Purpose> purposes = [
+  Purpose(
+    name: 'Sale',
+    
+  ),
+  Purpose(
+    name: 'Rent',
+    
+  ),
+
+
+];
+
+

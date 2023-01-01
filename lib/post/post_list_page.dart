@@ -58,7 +58,7 @@ class _ProductPageState extends State<ProductPage> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(6.0),
                             child: InkWell(
                               onTap: () {
                                 Navigator.of(context).pushNamed(
@@ -68,7 +68,7 @@ class _ProductPageState extends State<ProductPage> {
                                     "description": values[index]['detail'],
                                     "address": values[index]['address'],
                                     "images": values[index]['imagesUrl'],
-                                    "isOnSale": values[index]['isOnSale'],
+                                    "purpose": values[index]['purpose'],
                                     "isPopular": values[index]['isPopular'],
                                     "price": values[index]['price'],
                                     "quantity": values[index]['quantity'],
@@ -84,12 +84,12 @@ class _ProductPageState extends State<ProductPage> {
                                       borderRadius: BorderRadius.circular(10),
                                       child: Image.network(
                                         values[index]['imagesUrl'][0],
-                                        height: 120,
+                                        fit: BoxFit.scaleDown,
+                                        height: 130,
                                         width: double.infinity,
                                       ),
                                     ),
                                     Positioned(
-                                      //top: 0,
                                       bottom: 0,
                                       right: 0,
                                       left: 0,
@@ -178,7 +178,7 @@ class _ProductPageState extends State<ProductPage> {
                 )
               : Center(
                   child: Text(
-                    'no product found',
+                    'No Categories Data found',
                   ),
                 );
         },
