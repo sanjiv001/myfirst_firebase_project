@@ -12,15 +12,15 @@ import 'package:myfirstproject/widgets/property_item.dart';
 import 'package:myfirstproject/widgets/recent_item.dart';
 import 'package:myfirstproject/widgets/recommend_item.dart';
 
-class HomePage extends StatefulWidget {
-  static const id = "/HomePage";
-  const HomePage({Key? key}) : super(key: key);
+class DashboardScreen extends StatefulWidget {
+  static const id = "/DashboardScreen";
+  const DashboardScreen({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _DashboardScreenState createState() => _DashboardScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(

@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myfirstproject/authentication/forgotton_password.dart';
-import 'package:myfirstproject/authentication/phone_auth/login_with_phone_number.dart';
-import 'package:myfirstproject/authentication/register_screen.dart';
+import 'package:myfirstproject/screen/authentication/forgotton_password.dart';
+import 'package:myfirstproject/screen/authentication/phone_auth/login_with_phone_number.dart';
+import 'package:myfirstproject/screen/authentication/register_screen.dart';
 import 'package:myfirstproject/screen/homescreen.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 import 'package:myfirstproject/widgets/round_bottom.dart';
@@ -41,11 +41,12 @@ class _LoginScreenState extends State<LoginScreen> {
             email: emailController.text,
             password: passwordController.text.toString())
         .then((value) {
-      Utils().toastMessage(value.user!.email.toString());
+           Utils().toastMessage("User Login Successfully!!!");
+     // Utils().toastMessage(value.user!.email.toString());
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const HomeScreen()));
       setState(() {
-        loading = false;
+        loading = true;
       });
     }).onError((error, stackTrace) {
       debugPrint(error.toString());

@@ -1,9 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/authentication/phone_auth/verify_code.dart';
+import 'package:myfirstproject/screen/authentication/phone_auth/verify_code.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 import 'package:myfirstproject/widgets/round_bottom.dart';
-
 
 class LoginWithPhoneNumber extends StatefulWidget {
   static const id = "/LoginWithPhoneNumber";
@@ -61,7 +60,8 @@ class _LoginWithPhoneNumberState extends State<LoginWithPhoneNumber> {
                         setState(() {
                           loading = false;
                         });
-                        Utils().toastMessage(e.toString());
+                        // Utils().toastMessage(e.toString());
+                        Utils().toastMessage("Login With Phone Succeed!!!");
                       },
                       codeSent: (String verificationId, int? token) {
                         Navigator.push(

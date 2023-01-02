@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/Drawer_section/drawer_header.dart';
-import 'package:myfirstproject/authentication/login_screen.dart';
+import 'package:myfirstproject/screen/Drawer_section/drawer_header.dart';
+import 'package:myfirstproject/screen/authentication/login_screen.dart';
 import 'package:myfirstproject/screen/botton_navigation_bar.dart';
+import 'package:myfirstproject/screen/settings/setting.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,9 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text("HireXXo"),
         centerTitle: true,
-        
       ),
-      
+
       body: const RootApp(),
       drawer: Drawer(
         child: ListView(
@@ -33,18 +33,19 @@ class _HomeScreenState extends State<HomeScreen> {
             const MyDrawerHeader(),
             //  Menu(),
             ListTile(
-              leading: const Icon(Icons.dashboard_rounded),
-              title: const Text('Apartments List'),
+              leading: const Icon(Icons.add_moderator_rounded),
+              title: const Text("Admin"),
               onTap: () => Navigator.of(context).pushNamed('/lalitpur'),
             ),
             ListTile(
-              leading: const Icon(Icons.dashboard_rounded),
-              title: const Text('Rental Room List'),
-              onTap: () => Navigator.of(context).pushNamed('/lalitpur'),
+              leading: const Icon(Icons.settings_applications_rounded),
+              title: const Text('Settings'),
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SettingsPage())),
             ),
             ListTile(
-              leading: const Icon(Icons.add_home),
-              title: const Text(' Add '),
+              leading: const Icon(Icons.notification_important_rounded),
+              title: const Text(' Notifications'),
               onTap: () => Navigator.of(context).pushNamed('/addhostel'),
             ),
 
@@ -59,6 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
               title: const Text('LogOut'),
               onTap: () {
                 auth.signOut().then((value) {
+                  Utils().toastMessage("User LogOut Successfully!!!");
                   Navigator.push(
                       context,
                       MaterialPageRoute(

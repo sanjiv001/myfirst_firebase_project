@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/authentication/login_screen.dart';
+import 'package:myfirstproject/screen/authentication/login_screen.dart';
 import 'package:myfirstproject/screen/homescreen.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 import 'package:myfirstproject/widgets/round_bottom.dart';
@@ -43,7 +43,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             email: emailController.text.toString(),
             password: passwordController.text.toString())
         .then((value) {
-      Utils().toastMessage(value.user!.email.toString());
+      Utils().toastMessage("Registered Successfully!!!");
+      // Utils().toastMessage(value.user!.email.toString());
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const HomeScreen()));
       setState(() {

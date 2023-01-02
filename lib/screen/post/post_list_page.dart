@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:myfirstproject/post/post_detail_page.dart';
+import 'package:myfirstproject/screen/post/post_detail_page.dart';
 import 'package:myfirstproject/widgets/decoration.dart';
 
 class ProductPage extends StatefulWidget {

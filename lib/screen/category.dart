@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:myfirstproject/models/categories.dart';
-import 'package:myfirstproject/post/post_list_page.dart';
+import 'package:myfirstproject/screen/post/post_list_page.dart';
 
 class CategoryList extends StatefulWidget {
   static const id = "/CategoryList";

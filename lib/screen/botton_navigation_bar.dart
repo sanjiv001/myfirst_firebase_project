@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/post/post_apartment.dart';
+import 'package:myfirstproject/screen/post/post_apartment.dart';
 import 'package:myfirstproject/screen/dashboard_sceen.dart';
+import 'package:myfirstproject/screen/settings/setting.dart';
 import 'package:myfirstproject/theme/color.dart';
 import 'package:myfirstproject/widgets/bottombar_item.dart';
 
@@ -18,13 +19,13 @@ class _RootAppState extends State<RootApp> {
     {
       "icon": Icons.home_outlined,
       "active_icon": Icons.home_rounded,
-      "page": const HomePage(),
+      "page": const DashboardScreen(),
       "title": ""
     },
     {
       "icon": Icons.search_outlined,
       "active_icon": Icons.search,
-      "page": const HomePage(),
+      "page": const DashboardScreen(),
       "title": ""
     },
     {
@@ -36,13 +37,19 @@ class _RootAppState extends State<RootApp> {
     {
       "icon": Icons.favorite_border,
       "active_icon": Icons.favorite_outlined,
-      "page": const HomePage(),
+      "page": const DashboardScreen(),
       "title": ""
     },
+    // {
+    //   "icon": Icons.verified_user_rounded,
+    //   "active_icon": Icons.account_box_rounded,
+    //   "page": ProfileScreen(),
+    //   "title": ""
+    // },
     {
       "icon": Icons.settings_outlined,
       "active_icon": Icons.settings_rounded,
-      "page": const HomePage(),
+      "page": SettingsPage(),
       "title": ""
     },
   ];

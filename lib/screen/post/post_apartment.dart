@@ -141,7 +141,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     return null;
                   },
                   controller: productNameC,
-                  hint: 'Enter owner name',
+                  hint: 'Owner full name',
                   onsubmit: (value) {
                     setState(() {
                       productNameC.text = value!;
@@ -156,7 +156,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     return null;
                   },
                   controller: priceC,
-                  hint: 'Enter price per apartment',
+                  hint: 'Total price(NRs.) ',
                   onsubmit: (value) {
                     setState(() {
                       priceC.text = value!;
@@ -171,7 +171,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     return null;
                   },
                   controller: contactC,
-                  hint: 'Enter contact name',
+                  hint: ' Contact number',
                   onsubmit: (value) {
                     setState(() {
                       contactC.text = value!;
@@ -186,7 +186,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     return null;
                   },
                   controller: addressC,
-                  hint: 'Enter Full address name',
+                  hint: ' Full address name',
                   onsubmit: (value) {
                     setState(() {
                       addressC.text = value!;
@@ -201,7 +201,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     return null;
                   },
                   controller: quantityC,
-                  hint: 'No. of Apartment',
+                  hint: 'Total quantity(No. of rooms/Apartments)',
                   onsubmit: (value) {
                     setState(() {
                       quantityC.text = value!;
@@ -216,7 +216,6 @@ class _AddProductPageState extends State<AddProductPage> {
                         isPopular = v;
                       });
                     }),
-
                 SizedBox(
                   height: 200,
                   child: Column(
@@ -246,15 +245,6 @@ class _AddProductPageState extends State<AddProductPage> {
                     });
                   },
                 ),
-
-                // SwitchListTile(
-                //     title: const Text('Is this on Sale'),
-                //     value: isSale,
-                //     onChanged: (v) {
-                //       setState(() {
-                //         isSale = v;
-                //       });
-                //     }),
                 MaterialButton(
                   shape: const StadiumBorder(),
                   onPressed: () {

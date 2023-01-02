@@ -38,7 +38,7 @@ class _MyDrawerHeaderState extends State<MyDrawerHeader> {
           ),
           const Text(
             // "${loggedInUser.email}"
-            " ssanjiv0001@gmail.con",
+            " hirexxo1@gmail.con",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
         ],
