@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-var profile = "https://avatars.githubusercontent.com/u/86506519?v=4";
+// var profile = "https://avatars.githubusercontent.com/u/86506519?v=4";
+var profile =
+    "https://cdn.pixabay.com/photo/2018/08/28/12/41/avatar-3637425_960_720.png";
 
 List populars = [
   {

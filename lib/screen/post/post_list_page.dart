@@ -69,7 +69,6 @@ class _ProductPageState extends State<ProductPage> {
                                     "address": values[index]['address'],
                                     "images": values[index]['imagesUrl'],
                                     "purpose": values[index]['purpose'],
-                                    "isPopular": values[index]['isPopular'],
                                     "price": values[index]['price'],
                                     "quantity": values[index]['quantity'],
                                     "contact": values[index]['contact'],
@@ -85,7 +84,7 @@ class _ProductPageState extends State<ProductPage> {
                                       child: Image.network(
                                         values[index]['imagesUrl'][0],
                                         fit: BoxFit.scaleDown,
-                                        height: 130,
+                                        height: 160,
                                         width: double.infinity,
                                       ),
                                     ),
@@ -124,18 +123,14 @@ class _ProductPageState extends State<ProductPage> {
                                                       Container(
                                                         child: Text(
                                                             values[index]
-                                                                    ['price']
+                                                                    ['purpose']
                                                                 .toString(),
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: TextStyle(
-                                                              color: Color
-                                                                  .fromARGB(
-                                                                      255,
-                                                                      198,
-                                                                      52,
-                                                                      52),
-                                                              fontSize: 15,
+                                                              color:
+                                                                  Colors.black,
+                                                              fontSize: 25,
                                                             )),
                                                       ),
                                                     ],
