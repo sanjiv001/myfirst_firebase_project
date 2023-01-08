@@ -7,7 +7,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myfirstproject/screen/homescreen.dart';
+import 'package:myfirstproject/screen/settings/setting.dart';
 import 'package:myfirstproject/widgets/profile/pbutton.dart';
 import 'package:myfirstproject/widgets/profile/ptextform.dart';
 import 'package:myfirstproject/widgets/utils.dart';
@@ -188,10 +188,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const HomeScreen()));
+                              builder: (context) => SettingsPage()));
                     },
                     title: 'Back',
-                  )
+                  ),
                 ],
               ),
             ),

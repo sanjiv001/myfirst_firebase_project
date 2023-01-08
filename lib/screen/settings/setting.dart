@@ -1,9 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myfirstproject/screen/authentication/login_screen.dart';
 import 'package:myfirstproject/screen/profile/profile_page.dart';
 import 'package:myfirstproject/screen/settings/about_us.dart';
+import 'package:myfirstproject/widgets/utils.dart';
 
 class SettingsPage extends StatefulWidget {
   static const id = "/SettingsPage";
@@ -12,6 +15,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -221,14 +225,53 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 1,
             ),
-            Divider(
-              height: 15,
-              thickness: 12,
+            GestureDetector(
+              onTap: () {
+                auth.signOut().then((value) {
+                  Utils().toastMessage("User LogOut Successfully!!!");
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()));
+                }).onError((error, stackTrace) {
+                  Utils().toastMessage(error.toString());
+                });
+              },
+              child: SizedBox(
+                height: 50,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Log Out",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 16, 16, 16),
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
             SizedBox(
               height: 20,
+            ),
+            Divider(
+              height: 15,
+              thickness: 22,
+            ),
+            SizedBox(
+              height: 10,
             ),
 
             buildNotificationOptionRow("Account activity", true),

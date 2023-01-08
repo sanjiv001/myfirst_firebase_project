@@ -17,30 +17,22 @@ List<Category> categories = [
     icon: FontAwesomeIcons.cartFlatbedSuitcase,
   ),
   Category(
-    name: 'Buildings',
+    name: 'Building',
     icon: FontAwesomeIcons.house,
   ),
-
 ];
-
 
 class Purpose {
   String? name;
- 
+
   Purpose({@required this.name});
 }
 
 List<Purpose> purposes = [
   Purpose(
     name: 'Sale',
-    
   ),
   Purpose(
     name: 'Rent',
-    
   ),
-
-
 ];
-
-

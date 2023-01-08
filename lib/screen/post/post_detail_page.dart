@@ -1,5 +1,4 @@
-
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, prefer_const_constructors
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -163,6 +162,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                             padding: const EdgeInsets.all(14.0),
                             child: Column(
                               children: [
+                                // ignore: prefer_const_constructors
                                 Text(" Address",
                                     style: TextStyle(
                                         fontSize: 20,
@@ -238,7 +238,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text("JUST ONLY :  RS $price ",
+                            Text("JUST ONLY :  RS. $price ",
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
@@ -271,11 +271,11 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           children: [
                             Column(
                               children: [
-                                Text(" Contact",
+                                Text(" CONTACT",
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold)),
-                                Text("Nepal: +997 $contact ",
+                                Text("Nepal: +997 $contact ".toUpperCase(),
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.normal,

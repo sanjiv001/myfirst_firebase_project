@@ -111,7 +111,8 @@ class _ProductPageState extends State<ProductPage> {
                                                       Container(
                                                         child: Text(
                                                             values[index]
-                                                                ['address'],
+                                                                    ['address']
+                                                                .toUpperCase(),
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: TextStyle(

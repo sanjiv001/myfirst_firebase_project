@@ -40,12 +40,7 @@ class _RootAppState extends State<RootApp> {
       "page": const DashboardScreen(),
       "title": ""
     },
-    // {
-    //   "icon": Icons.verified_user_rounded,
-    //   "active_icon": Icons.account_box_rounded,
-    //   "page": ProfileScreen(),
-    //   "title": ""
-    // },
+  
     {
       "icon": Icons.settings_outlined,
       "active_icon": Icons.settings_rounded,

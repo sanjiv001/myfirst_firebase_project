@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:myfirstproject/models/categories.dart';
 import 'package:myfirstproject/screen/post/post_list_page.dart';
 
@@ -40,11 +39,14 @@ class _CategoryListState extends State<CategoryList> {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(30),
                           gradient: LinearGradient(
                               begin: Alignment.centerLeft,
                               end: Alignment.centerRight,
-                              colors: [Colors.purple, Colors.blue]),
+                              colors: const [
+                                Color.fromARGB(255, 229, 226, 229),
+                                Color.fromARGB(255, 24, 26, 28)
+                              ]),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(18.0),
@@ -55,7 +57,7 @@ class _CategoryListState extends State<CategoryList> {
                                 child: Text(
                                   e.name as String,
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 30,
                                     color: Colors.white,
                                   ),
                                 ),
