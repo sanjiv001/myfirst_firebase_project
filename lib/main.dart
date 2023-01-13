@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, equal_keys_in_map
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:myfirstproject/screen/authentication/login_screen.dart';
 import 'package:myfirstproject/screen/authentication/phone_auth/login_with_phone_number.dart';
 import 'package:myfirstproject/screen/authentication/register_screen.dart';
+import 'package:myfirstproject/screen/favorite.dart';
 import 'package:myfirstproject/screen/post/post_apartment.dart';
 import 'package:myfirstproject/screen/post/post_detail_page.dart';
 import 'package:myfirstproject/screen/post/post_list_page.dart';
@@ -14,6 +15,7 @@ import 'package:myfirstproject/screen/homescreen.dart';
 import 'package:myfirstproject/screen/profile/profile_page.dart';
 import 'package:myfirstproject/screen/settings/setting.dart';
 import 'package:myfirstproject/screen/splash_screen.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,6 +52,7 @@ class MyApp extends StatelessWidget {
         ProductDetailPage.id: (context) => ProductDetailPage(),
         ProfileScreen.id: (context) => ProfileScreen(),
         SettingsPage.id: (context) => SettingsPage(),
+       // FavouriteScreen.id: (context) => FavouriteScreen(),
       },
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfirstproject/screen/favorite.dart';
 import 'package:myfirstproject/screen/post/post_apartment.dart';
 import 'package:myfirstproject/screen/dashboard_sceen.dart';
 import 'package:myfirstproject/screen/settings/setting.dart';
@@ -34,13 +35,12 @@ class _RootAppState extends State<RootApp> {
       "page": AddProductPage(),
       "title": ""
     },
-    {
-      "icon": Icons.favorite_border,
-      "active_icon": Icons.favorite_outlined,
-      "page": const DashboardScreen(),
-      "title": ""
-    },
-  
+    // {
+    //   "icon": Icons.favorite_border,
+    //   "active_icon": Icons.favorite_outlined,
+    //   "page": const FavouriteScreen(),
+    //   "title": ""
+    // },
     {
       "icon": Icons.settings_outlined,
       "active_icon": Icons.settings_rounded,

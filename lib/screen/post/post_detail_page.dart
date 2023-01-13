@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:myfirstproject/screen/map.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -63,7 +64,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     images[selectedIndex],
                   ),
                   height: 360,
-                  width: double.infinity,
                   fit: BoxFit.cover,
                 ),
                 Positioned(
@@ -141,6 +141,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                 child: Column(
                   children: [
                     Container(
+                      width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(
@@ -219,13 +220,14 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     SizedBox(height: 10),
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.deepPurple.withOpacity(0.2),
+                        color:
+                            Color.fromARGB(255, 247, 247, 248).withOpacity(0.2),
                         borderRadius: BorderRadius.circular(
                           5,
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Color.fromARGB(255, 65, 63, 63)
+                            color: Color.fromARGB(255, 199, 195, 195)
                                 .withOpacity(0.2),
                             blurRadius: 2,
                             spreadRadius: 2,
@@ -251,13 +253,14 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     SizedBox(height: 10),
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.deepPurple.withOpacity(0.2),
+                        color:
+                            Color.fromARGB(255, 244, 243, 247).withOpacity(0.2),
                         borderRadius: BorderRadius.circular(
                           5,
                         ),
                         boxShadow: const [
                           BoxShadow(
-                            color: Colors.blueGrey,
+                            color: Color.fromARGB(255, 245, 247, 248),
                             blurRadius: 2,
                             spreadRadius: 2,
                             offset: Offset(3, 3),
@@ -419,7 +422,10 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MapScreen()));
+                  },
                   child: Text('View Location on Map'),
                 ),
               ),

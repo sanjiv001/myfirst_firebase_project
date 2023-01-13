@@ -53,6 +53,11 @@ dependencies:
   google_fonts: ^3.0.1
   lottie: ^2.1.0
   theme_provider: ^0.5.0
+  google_maps_flutter: ^2.2.3
+  firebase_database: ^10.0.9
+  syncfusion_flutter_maps: ^20.4.43
+
+
 
 dev_dependencies:
   flutter_test:
