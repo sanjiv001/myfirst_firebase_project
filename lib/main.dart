@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:myfirstproject/screen/authentication/login_screen.dart';
 import 'package:myfirstproject/screen/authentication/phone_auth/login_with_phone_number.dart';
 import 'package:myfirstproject/screen/authentication/register_screen.dart';
-import 'package:myfirstproject/screen/favorite.dart';
+import 'package:myfirstproject/screen/onboarding.dart';
 import 'package:myfirstproject/screen/post/post_apartment.dart';
 import 'package:myfirstproject/screen/post/post_detail_page.dart';
 import 'package:myfirstproject/screen/post/post_list_page.dart';
@@ -14,12 +14,15 @@ import 'package:myfirstproject/screen/dashboard_sceen.dart';
 import 'package:myfirstproject/screen/homescreen.dart';
 import 'package:myfirstproject/screen/profile/profile_page.dart';
 import 'package:myfirstproject/screen/settings/setting.dart';
-import 'package:myfirstproject/screen/splash_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
+bool show = true;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  final prefs = await SharedPreferences.getInstance();
+  show = prefs.getBool('ON_BOARDING') ?? true;
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarColor: Colors.transparent, // transparent status bar
@@ -39,9 +42,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: IntroScreen(),
       routes: {
-        SplashScreen.id: (context) => SplashScreen(),
+        IntroScreen.id: (context) => IntroScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
         DashboardScreen.id: (context) => DashboardScreen(),
@@ -52,7 +55,6 @@ class MyApp extends StatelessWidget {
         ProductDetailPage.id: (context) => ProductDetailPage(),
         ProfileScreen.id: (context) => ProfileScreen(),
         SettingsPage.id: (context) => SettingsPage(),
-       // FavouriteScreen.id: (context) => FavouriteScreen(),
       },
     );
   }
