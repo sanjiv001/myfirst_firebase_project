@@ -97,8 +97,8 @@ class IntroScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20)),
                     elevation: 8),
                 onPressed: () {},
-                child:
-                    const Text("Let's Start", style: TextStyle(fontSize: 20)),
+                child: const Text("Click  on Done ",
+                    style: TextStyle(fontSize: 20)),
               ),
             ),
           ],

@@ -28,6 +28,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 200,
+              width: 200,
+              child: Image.asset('assets/images/forgot.jpg'),
+            ),
             TextFormField(
               controller: emailController,
               decoration: const InputDecoration(
@@ -57,8 +62,3 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     );
   }
 }
-
-
-
-
-

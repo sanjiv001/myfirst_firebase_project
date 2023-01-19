@@ -41,8 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
             email: emailController.text,
             password: passwordController.text.toString())
         .then((value) {
-           Utils().toastMessage("User Login Successfully!!!");
-    
+      Utils().toastMessage("User Login Successfully!!!");
+
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const HomeScreen()));
       setState(() {
@@ -70,127 +70,142 @@ class _LoginScreenState extends State<LoginScreen> {
           title: const Text('Login'),
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        controller: emailController,
-                        decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: 'sanjiv@gmail.com',
-                            prefixIcon: Icon(Icons.attach_email_rounded)),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Enter email';
-                          }
-                          return null;
-                        },
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      TextFormField(
-                        keyboardType: TextInputType.text,
-                        controller: passwordController,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: 'Password',
-                            prefixIcon: Icon(Icons.lock_open)),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Enter password';
-                          }
-                          return null;
-                        },
-                      ),
-                    ],
-                  )),
-              const SizedBox(
-                height: 20,
-              ),
-              RoundButton(
-                title: 'Login',
-                loading: loading,
-                onTap: () {
-                  if (_formKey.currentState!.validate()) {
-                    login();
-                  }
-                },
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const ForgotPasswordScreen()));
-                    },
-                    child: const Text(
-                      'Forgot Password?',
-                      style: TextStyle(fontSize: 16),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        SizedBox(
+                          height: 200,
+                          width: 200,
+                          child: Image.asset('assets/images/login.jpg'),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextFormField(
+                          keyboardType: TextInputType.emailAddress,
+                          controller: emailController,
+                          decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              hintText: 'sanjiv@gmail.com',
+                              prefixIcon: Icon(Icons.attach_email_rounded)),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Enter email';
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextFormField(
+                          keyboardType: TextInputType.text,
+                          controller: passwordController,
+                          obscureText: true,
+                          decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              hintText: 'Password',
+                              prefixIcon: Icon(Icons.lock_open)),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Enter password';
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
                     )),
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Don't have an account?",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  TextButton(
+                const SizedBox(
+                  height: 20,
+                ),
+                RoundButton(
+                  title: 'Login',
+                  loading: loading,
+                  onTap: () {
+                    if (_formKey.currentState!.validate()) {
+                      login();
+                    }
+                  },
+                ),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: TextButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const SignUpScreen()));
+                                builder: (context) =>
+                                    const ForgotPasswordScreen()));
                       },
                       child: const Text(
-                        'Sign up',
-                        style: TextStyle(fontSize: 24),
-                      ))
-                ],
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginWithPhoneNumber()));
-                },
-                child: Container(
-                  height: 50,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      border: Border.all(
-                          color: const Color.fromARGB(255, 11, 142, 64))),
-                  child: const Center(
-                    child: Text(
-                      'Login with phone',
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 9, 125, 58), fontSize: 24),
+                        'Forgot Password?',
+                        style: TextStyle(fontSize: 20),
+                      )),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Don't have an account?",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignUpScreen()));
+                        },
+                        child: const Text(
+                          'Sign up',
+                          style: TextStyle(fontSize: 24),
+                        ))
+                  ],
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const LoginWithPhoneNumber()));
+                  },
+                  child: Container(
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        border: Border.all(
+                            color: const Color.fromARGB(255, 11, 142, 64))),
+                    child: const Center(
+                      child: Text(
+                        'Login with phone',
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 9, 125, 58),
+                            fontSize: 24),
+                      ),
                     ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
