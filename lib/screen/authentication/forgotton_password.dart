@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 import 'package:myfirstproject/widgets/round_bottom.dart';
 
-
 class ForgotPasswordScreen extends StatefulWidget {
+  static const id = "/ForgotPasswordScreen";
   const ForgotPasswordScreen({Key? key}) : super(key: key);
 
   @override
@@ -57,3 +57,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     );
   }
 }
+
+
+
+
+

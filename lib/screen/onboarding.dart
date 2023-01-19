@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:myfirstproject/screen/homescreen.dart';
+import 'package:myfirstproject/screen/authentication/register_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -87,7 +87,7 @@ class IntroScreen extends StatelessWidget {
             const SizedBox(
               height: 60,
             ),
-            Container(
+            SizedBox(
               height: 45,
               width: 300,
               child: ElevatedButton(
@@ -156,6 +156,6 @@ class IntroScreen extends StatelessWidget {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('ON_BOARDING', false);
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+        context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
   }
 }

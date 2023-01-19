@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
             password: passwordController.text.toString())
         .then((value) {
            Utils().toastMessage("User Login Successfully!!!");
-     // Utils().toastMessage(value.user!.email.toString());
+    
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => const HomeScreen()));
       setState(() {

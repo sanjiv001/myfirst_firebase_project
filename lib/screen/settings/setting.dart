@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:myfirstproject/screen/authentication/login_screen.dart';
 import 'package:myfirstproject/screen/profile/profile_page.dart';
 import 'package:myfirstproject/screen/settings/about_us.dart';
+import 'package:myfirstproject/screen/settings/term&condition.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -166,7 +167,7 @@ class _SettingsPageState extends State<SettingsPage> {
             GestureDetector(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AboutUsPage()));
+                    MaterialPageRoute(builder: (context) => TermsOfUse()));
               },
               child: SizedBox(
                 height: 50,

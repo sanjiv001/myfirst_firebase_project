@@ -53,32 +53,52 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        leading: Container(
+          child: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 213, 120, 120),
+            ),
+          ),
+        ),
+        backgroundColor: Colors.green,
+        title: const Text(
+          " Post Details Page",
+        ),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
-                Image(
-                  image: CachedNetworkImageProvider(
-                    images[selectedIndex],
+                Center(
+                  child: Image(
+                    image: CachedNetworkImageProvider(
+                      images[selectedIndex],
+                    ),
+                    height: 280,
+                    fit: BoxFit.cover,
                   ),
-                  height: 360,
-                  fit: BoxFit.cover,
                 ),
-                Positioned(
-                    top: 60,
-                    left: 0,
-                    child: Container(
-                      child: IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: Icon(
-                            Icons.arrow_back_ios,
-                            color: Colors.black,
-                          )),
-                    )),
+                // Positioned(
+                //     top: 60,
+                //     left: 0,
+                //     child: Container(
+                //       child: IconButton(
+                //           onPressed: () {
+                //             Navigator.pop(context);
+                //           },
+                //           icon: Icon(
+                //             Icons.arrow_back_ios,
+                //             color: Colors.black,
+                //           )),
+                //     )),
                 Positioned(
                   bottom: 15,
                   left: 0,

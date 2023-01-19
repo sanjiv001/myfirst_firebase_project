@@ -7,7 +7,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myfirstproject/screen/settings/setting.dart';
 import 'package:myfirstproject/widgets/profile/pbutton.dart';
 import 'package:myfirstproject/widgets/profile/ptextform.dart';
 import 'package:myfirstproject/widgets/utils.dart';
@@ -61,6 +60,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: Container(
+          child: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 213, 120, 120),
+            ),
+          ),
+        ),
+        backgroundColor: Colors.green,
+        title: const Text(
+          "Profile Page",
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -182,15 +199,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 : update();
                       }
                     },
-                  ),
-                  PButton(
-                    onPress: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SettingsPage()));
-                    },
-                    title: 'Back',
                   ),
                 ],
               ),

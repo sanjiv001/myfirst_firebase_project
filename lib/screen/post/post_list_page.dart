@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:myfirstproject/screen/post/post_detail_page.dart';
+import 'package:myfirstproject/screen/post/update_post.dart';
 import 'package:myfirstproject/widgets/decoration.dart';
 
 class ProductPage extends StatefulWidget {
@@ -140,7 +141,11 @@ class _ProductPageState extends State<ProductPage> {
                                               ),
                                               Expanded(
                                                 child: IconButton(
-                                                  onPressed: () {},
+                                                  onPressed: () {
+                                                    Navigator.of(context)
+                                                        .pushNamed(
+                                                            UpdatePostPage.id);
+                                                  },
                                                   icon: Icon(
                                                       FontAwesomeIcons.edit),
                                                   color: Color.fromRGBO(
