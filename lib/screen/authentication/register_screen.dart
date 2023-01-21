@@ -80,10 +80,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       const SizedBox(
                         height: 10,
                       ),
-                      SizedBox(
-                        height: 220,
-                        width: 220,
-                        child: Image.asset('assets/images/new.jpg'),
+                      Center(
+                        child: SizedBox(
+                          height: 200,
+                          width: 220,
+                          child: Image.asset('assets/images/new.jpg'),
+                        ),
                       ),
                       const SizedBox(
                         height: 10,
