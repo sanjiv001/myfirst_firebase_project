@@ -45,31 +45,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Center(
-                      child: Text(
-                        "Welcome To",
-                        style: TextStyle(
-                            color: darker,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ),
-                    Center(
-                      child: Text(
-                        //  "${loggedInUser.firstName} ${loggedInUser.secondName}"
-                        "HireXXo",
-                        style: TextStyle(
-                            color: Colors.black87,
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ],
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    "Welcome To",
+                    style: TextStyle(
+                        color: darker,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    //  "${loggedInUser.firstName} ${loggedInUser.secondName}"
+                    "HireXXo",
+                    style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ],
               ),
               CustomImage(
                 profile,
@@ -99,10 +93,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
             child: Row(
               children: [
                 Expanded(
+                  
                     child: CustomTextBox(
                   hint: "Search",
+            
                   prefix: const Icon(Icons.search, color: Colors.grey),
                 )),
+                
+                
+                
                 const SizedBox(
                   width: 10,
                 ),

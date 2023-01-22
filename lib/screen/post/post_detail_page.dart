@@ -86,19 +86,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                // Positioned(
-                //     top: 60,
-                //     left: 0,
-                //     child: Container(
-                //       child: IconButton(
-                //           onPressed: () {
-                //             Navigator.pop(context);
-                //           },
-                //           icon: Icon(
-                //             Icons.arrow_back_ios,
-                //             color: Colors.black,
-                //           )),
-                //     )),
                 Positioned(
                   bottom: 15,
                   left: 0,
@@ -186,11 +173,11 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                                 // ignore: prefer_const_constructors
                                 Text(" Address",
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         fontWeight: FontWeight.bold)),
                                 Text(" $address".toUpperCase(),
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         fontWeight: FontWeight.normal)),
                               ],
                             ),
@@ -201,11 +188,11 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                               children: [
                                 Text(" Quantity",
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         fontWeight: FontWeight.bold)),
                                 Text(" $quantity".toUpperCase(),
                                     style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         fontWeight: FontWeight.normal)),
                               ],
                             ),
@@ -214,7 +201,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(
-                                10,
+                                8,
                               ),
                               boxShadow: [
                                 BoxShadow(
@@ -226,7 +213,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                               ],
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(6.0),
                               child: FavoriteButton(
                                 valueChanged: (isFavorite) {
                                   print('Is Favorite $isFavorite)');

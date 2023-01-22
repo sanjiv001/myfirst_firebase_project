@@ -18,6 +18,7 @@ class _ProductPageState extends State<ProductPage> {
   FirebaseFirestore db = FirebaseFirestore.instance;
   bool isFavourite = false;
   List favourotes = [];
+  String address = "";
   @override
   Widget build(BuildContext context) {
     final data =
@@ -26,7 +27,7 @@ class _ProductPageState extends State<ProductPage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Text(category),
+        title: Center(child: Text(category)),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(10),
@@ -58,6 +59,9 @@ class _ProductPageState extends State<ProductPage> {
                     return Container(
                       child: Column(
                         children: [
+                          SizedBox(
+                            height: 20,
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: InkWell(
