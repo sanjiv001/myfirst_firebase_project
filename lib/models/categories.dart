@@ -17,7 +17,7 @@ List<Category> categories = [
     icon: FontAwesomeIcons.cartFlatbedSuitcase,
   ),
   Category(
-    name: 'Building',
+    name: 'Houses',
     icon: FontAwesomeIcons.house,
   ),
 ];

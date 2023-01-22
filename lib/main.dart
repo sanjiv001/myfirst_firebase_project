@@ -19,6 +19,8 @@ import 'package:myfirstproject/screen/settings/setting.dart';
 import 'package:myfirstproject/screen/settings/term&condition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+
+
 bool show = true;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
