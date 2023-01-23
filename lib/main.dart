@@ -19,8 +19,6 @@ import 'package:myfirstproject/screen/settings/setting.dart';
 import 'package:myfirstproject/screen/settings/term&condition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-
 bool show = true;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,7 +40,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'MyTenants',
+      title: 'HireXXo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
