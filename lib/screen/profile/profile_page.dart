@@ -263,6 +263,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           });
         });
       });
+      
     } else {
       Map<String, dynamic> data = {
         'name': nameC.text,
