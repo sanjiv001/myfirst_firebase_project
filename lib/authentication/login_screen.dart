@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myfirstproject/screen/authentication/forgotton_password.dart';
-import 'package:myfirstproject/screen/authentication/phone_auth/login_with_phone_number.dart';
-import 'package:myfirstproject/screen/authentication/register_screen.dart';
+import 'package:myfirstproject/authentication/forgotton_password.dart';
+import 'package:myfirstproject/authentication/phone_auth/login_with_phone_number.dart';
+import 'package:myfirstproject/authentication/register_screen.dart';
 import 'package:myfirstproject/screen/homescreen.dart';
-import 'package:myfirstproject/widgets/utils.dart';
 import 'package:myfirstproject/widgets/round_bottom.dart';
+import 'package:myfirstproject/widgets/utils.dart';
 
 class LoginScreen extends StatefulWidget {
   static const id = "/LoginScreen";
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(
                           height: 200,
                           width: 200,
-                          child: Image.asset('assets/images/login.jpg'),
+                          child: Image.asset('assets/images/login.JPG'),
                         ),
                         const SizedBox(
                           height: 20,

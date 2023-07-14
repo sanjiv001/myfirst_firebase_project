@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/screen/authentication/phone_auth/verify_code.dart';
+import 'package:myfirstproject/authentication/phone_auth/verify_code.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 import 'package:myfirstproject/widgets/round_bottom.dart';
 

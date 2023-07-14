@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/widgets/utils.dart';
 import 'package:myfirstproject/widgets/round_bottom.dart';
+import 'package:myfirstproject/widgets/utils.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   static const id = "/ForgotPasswordScreen";
@@ -31,7 +31,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             SizedBox(
               height: 200,
               width: 200,
-              child: Image.asset('assets/images/forgot.jpg'),
+              child: Image.asset('assets/images/forgotpassword.JPG'),
             ),
             TextFormField(
               controller: emailController,

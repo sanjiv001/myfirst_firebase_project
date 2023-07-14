@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:myfirstproject/screen/authentication/register_screen.dart';
+import 'package:myfirstproject/authentication/register_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+
 
 class IntroScreen extends StatelessWidget {
   static const id = "/IntroScreen";
@@ -22,7 +24,7 @@ class IntroScreen extends StatelessWidget {
               width: 300,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
+                    backgroundColor: Color.fromARGB(255, 203, 13, 108),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     elevation: 8),
@@ -35,7 +37,7 @@ class IntroScreen extends StatelessWidget {
         image: SizedBox(
           height: 200,
           width: 200,
-          child: Image.asset('assets/images/wel.jpg'),
+          child: Image.asset('assets/images/welcome.jpg'),
         ),
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
@@ -56,7 +58,7 @@ class IntroScreen extends StatelessWidget {
               width: 300,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    // primary: Colors.red,
+                    primary: Color.fromARGB(255, 197, 9, 87),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     elevation: 8),
@@ -72,7 +74,7 @@ class IntroScreen extends StatelessWidget {
         image: SizedBox(
             height: 200,
             width: 200,
-            child: Image.asset('assets/images/hirexxo.jpg')),
+            child: Image.asset('assets/images/fashionfy.JPG')),
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
           fontSize: 25.0,
@@ -92,7 +94,7 @@ class IntroScreen extends StatelessWidget {
               width: 300,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
+                    backgroundColor: Color.fromARGB(255, 192, 7, 69),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     elevation: 8),
@@ -104,7 +106,7 @@ class IntroScreen extends StatelessWidget {
           ],
         ),
         image: Container(
-          child: Image.asset('assets/images/time.jpg'),
+          child: Image.asset('assets/images/time.JPG'),
         ),
         decoration: const PageDecoration(
             titleTextStyle: TextStyle(
@@ -126,9 +128,9 @@ class IntroScreen extends StatelessWidget {
           pages: pages,
           dotsDecorator: const DotsDecorator(
             size: Size(15, 15),
-            color: Colors.blue,
+            color: Color.fromARGB(255, 218, 120, 8),
             activeSize: Size.square(18),
-            activeColor: Colors.red,
+            activeColor: Color.fromARGB(255, 7, 193, 50),
           ),
           showDoneButton: true,
           done: const Text(

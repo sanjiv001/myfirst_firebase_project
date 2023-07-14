@@ -1,5 +1,4 @@
-// ignore_for_file: sort_child_properties_last
-
+// ignore_for_file: sort_child_properties_last, prefer_const_literals_to_create_immutables
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
@@ -8,6 +7,7 @@ import 'package:myfirstproject/models/categories.dart';
 import 'package:myfirstproject/screen/homescreen.dart';
 import 'package:myfirstproject/widgets/decoration.dart';
 import 'package:myfirstproject/widgets/utils.dart';
+
 
 class AddProductPage extends StatefulWidget {
   static const id = "/AddProductPage";
@@ -156,7 +156,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     return null;
                   },
                   controller: priceC,
-                  hint: 'Total price(NRs.) ',
+                  hint: 'Rate(NRs.) ',
                   onsubmit: (value) {
                     setState(() {
                       priceC.text = value!;
@@ -171,7 +171,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     return null;
                   },
                   controller: contactC,
-                  hint: ' Contact number',
+                  hint: ' ContactNo',
                   onsubmit: (value) {
                     setState(() {
                       contactC.text = value!;
@@ -186,7 +186,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     return null;
                   },
                   controller: addressC,
-                  hint: ' Full address name',
+                  hint: ' Full Address ',
                   onsubmit: (value) {
                     setState(() {
                       addressC.text = value!;
@@ -201,13 +201,48 @@ class _AddProductPageState extends State<AddProductPage> {
                     return null;
                   },
                   controller: quantityC,
-                  hint: 'Total quantity(No. of rooms/Apartments)',
+                  hint: 'No. of Room',
                   onsubmit: (value) {
                     setState(() {
                       quantityC.text = value!;
                     });
                   },
                 ),
+                  const Divider(
+                  color: Colors.black,
+                  height: 10,
+                ),
+                     InkWell(
+              onTap: () {
+              //  Navigator.of(context).push(
+              //     MaterialPageRoute(
+              //       builder: (context) => CostomGoogleMap(),
+              //     ),
+              //   );
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 45,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color:  Colors.grey.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Column(
+                    
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // checkoutProvider.setLoaction == null? 
+                      const Center(child: Text("Set Address")),
+                      // Text("Done!"),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            
                 SwitchListTile(
                     title: const Text('Is this product popular'),
                     value: isPopular,
@@ -216,6 +251,10 @@ class _AddProductPageState extends State<AddProductPage> {
                         isPopular = v;
                       });
                     }),
+                    const Divider(
+                  color: Colors.black,
+                  height: 10,
+                ),
                 SizedBox(
                   height: 200,
                   child: Column(
@@ -229,6 +268,7 @@ class _AddProductPageState extends State<AddProductPage> {
                     ],
                   ),
                 ),
+            
                 EditField(
                   lines: 8,
                   validator: (String? v) {
@@ -245,24 +285,28 @@ class _AddProductPageState extends State<AddProductPage> {
                     });
                   },
                 ),
+                  const Divider(
+                  color: Colors.black,
+                  height: 10,
+                ),
+                const SizedBox(height: 10),
                 MaterialButton(
                   shape: const StadiumBorder(),
                   onPressed: () {
+                    loading = true;
                     save().then((value) {
                       Utils().toastMessage("Posted Successfully!!!");
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const HomeScreen()));
-                      setState(() {
-                        loading = true;
-                      });
+                      
                     }).onError((error, stackTrace) {
                       debugPrint(error.toString());
                       Utils().toastMessage(error.toString());
                     });
                     setState(() {
-                      loading = false;
+                      loading = true;
                     });
                   },
                   child: const Padding(
@@ -352,6 +396,7 @@ class _AddProductPageState extends State<AddProductPage> {
               ));
   }
 }
+
 
 class EditField extends StatelessWidget {
   @override

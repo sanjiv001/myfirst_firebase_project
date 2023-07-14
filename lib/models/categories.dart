@@ -9,17 +9,14 @@ class Category {
 
 List<Category> categories = [
   Category(
-    name: 'Apartments',
-    icon: FontAwesomeIcons.houseChimneyUser,
+    name: 'Men',
+    icon: FontAwesomeIcons.male,
   ),
   Category(
-    name: 'Rooms',
-    icon: FontAwesomeIcons.cartFlatbedSuitcase,
+    name: 'Women',
+    icon: FontAwesomeIcons.female,
   ),
-  Category(
-    name: 'Houses',
-    icon: FontAwesomeIcons.house,
-  ),
+
 ];
 
 class Purpose {

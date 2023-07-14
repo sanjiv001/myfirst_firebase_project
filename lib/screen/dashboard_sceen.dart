@@ -6,11 +6,11 @@ import 'package:myfirstproject/theme/color.dart';
 import 'package:myfirstproject/theme/data.dart';
 import 'package:myfirstproject/widgets/category_item.dart';
 import 'package:myfirstproject/widgets/custom_image.dart';
-import 'package:myfirstproject/widgets/custom_textbox.dart';
-import 'package:myfirstproject/widgets/icon_box.dart';
 import 'package:myfirstproject/widgets/property_item.dart';
 import 'package:myfirstproject/widgets/recent_item.dart';
 import 'package:myfirstproject/widgets/recommend_item.dart';
+
+
 
 class DashboardScreen extends StatefulWidget {
   static const id = "/DashboardScreen";
@@ -21,63 +21,18 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  List imageList = [
+    {"id": 1, "image_path": 'assets/images/boysbanner.jpg'},
+    {"id": 2, "image_path": 'assets/images/girlsbanner.JPG'},
+    {"id": 3, "image_path": 'assets/images/girlsbanner2.JPG'},
+    {"id": 4, "image_path": 'assets/images/girlsbanner3.JPG'}
+  ];
+
+  final CarouselController carouselController = CarouselController();
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: <Widget>[
-        SliverAppBar(
-          backgroundColor: appBgColor,
-          pinned: true,
-          snap: true,
-          floating: true,
-          title: getHeader(),
-        ),
-        SliverToBoxAdapter(child: getBody())
-      ],
-    );
-  }
-
-  getHeader() {
-    return Container(
-      child: Column(
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "Welcome To",
-                    style: TextStyle(
-                        color: darker,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    //  "${loggedInUser.firstName} ${loggedInUser.secondName}"
-                    "HireXXo",
-                    style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
-              CustomImage(
-                profile,
-                width: 35,
-                height: 35,
-                trBackground: true,
-                borderColor: primary,
-                radius: 10,
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
+    return getBody();
   }
 
   getBody() {
@@ -89,33 +44,124 @@ class _DashboardScreenState extends State<DashboardScreen> {
             height: 15,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15),
-            child: Row(
-              children: [
-                Expanded(
-                  
-                    child: CustomTextBox(
-                  hint: "Search",
-            
-                  prefix: const Icon(Icons.search, color: Colors.grey),
-                )),
-                
-                
-                
-                const SizedBox(
-                  width: 10,
-                ),
-                IconBox(
-                  bgColor: secondary,
-                  radius: 10,
-                  child: const Icon(Icons.filter_list_rounded,
-                      color: Colors.white),
-                )
-              ],
+            padding: const EdgeInsets.only(left: 8, right: 8),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: const LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [
+                      Color.fromARGB(255, 229, 226, 229),
+                      Color.fromARGB(255, 32, 115, 198)
+                    ]),
+              ),
+              height: 46,
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "      Welcome To FashionStore",
+                            style: TextStyle(
+                                color: cardColor,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                      CustomImage(
+                        profile,
+                        width: 35,
+                        height: 35,
+                        trBackground: true,
+                        borderColor: primary,
+                        radius: 10,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(
             height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              margin: const EdgeInsets.all(5),
+              height: 180,
+              width: double.infinity,
+              child: Column(children: [
+                Stack(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        print(currentIndex);
+                      },
+                      child: CarouselSlider(
+                        items: imageList
+                            .map(
+                              (item) => Image.asset(
+                                item['image_path'],
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                              ),
+                            )
+                            .toList(),
+                        carouselController: carouselController,
+                        options: CarouselOptions(
+                          scrollPhysics: const BouncingScrollPhysics(),
+                          autoPlay: true,
+                          aspectRatio: 2,
+                          viewportFraction: 1,
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              currentIndex = index;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 10,
+                      left: 0,
+                      right: 0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: imageList.asMap().entries.map((entry) {
+                          return GestureDetector(
+                            onTap: () =>
+                                carouselController.animateToPage(entry.key),
+                            child: Container(
+                              width: currentIndex == entry.key ? 17 : 7,
+                              height: 7.0,
+                              margin: const EdgeInsets.symmetric(
+                                horizontal: 3.0,
+                              ),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: currentIndex == entry.key
+                                      ? Colors.red
+                                      : Colors.teal),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ],
+                ),
+              ]),
+            ),
+          ),
+          SizedBox(
+            height: 2,
           ),
           Container(
             margin: const EdgeInsets.only(left: 0),

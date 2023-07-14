@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myfirstproject/screen/favorite.dart';
-import 'package:myfirstproject/screen/post/post_apartment.dart';
+import 'package:myfirstproject/post/post_apartment.dart';
 import 'package:myfirstproject/screen/dashboard_sceen.dart';
-import 'package:myfirstproject/screen/settings/setting.dart';
+import 'package:myfirstproject/settings/setting.dart';
 import 'package:myfirstproject/theme/color.dart';
 import 'package:myfirstproject/widgets/bottombar_item.dart';
 

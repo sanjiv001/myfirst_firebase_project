@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/screen/Drawer_section/drawer_header.dart';
-import 'package:myfirstproject/screen/authentication/login_screen.dart';
+import 'package:myfirstproject/Drawer_section/drawer_header.dart';
+import 'package:myfirstproject/authentication/login_screen.dart';
 import 'package:myfirstproject/screen/botton_navigation_bar.dart';
-import 'package:myfirstproject/screen/settings/setting.dart';
+import 'package:myfirstproject/settings/setting.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("HireXXo"),
+        title: const Text("FashionStore"),
         centerTitle: true,
       ),
 

@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/screen/authentication/login_screen.dart';
+import 'package:myfirstproject/authentication/login_screen.dart';
 import 'package:myfirstproject/screen/homescreen.dart';
-import 'package:myfirstproject/widgets/utils.dart';
 import 'package:myfirstproject/widgets/round_bottom.dart';
+import 'package:myfirstproject/widgets/utils.dart';
 
 class SignUpScreen extends StatefulWidget {
   static const id = "/SignUpScreen";
@@ -84,7 +84,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         child: SizedBox(
                           height: 200,
                           width: 220,
-                          child: Image.asset('assets/images/new.jpg'),
+                          child: Image.asset('assets/images/signup.JPG'),
                         ),
                       ),
                       const SizedBox(
@@ -95,7 +95,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         controller: emailController,
                         decoration: const InputDecoration(
                             border: OutlineInputBorder(),
-                            hintText: 'sanjiv@gmail.com',
+                            hintText: 'ankit1@gmail.com',
                             prefixIcon: Icon(Icons.attach_email_rounded)),
                         validator: (value) {
                           if (value!.isEmpty) {

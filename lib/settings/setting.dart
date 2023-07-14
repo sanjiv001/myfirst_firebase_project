@@ -3,10 +3,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/screen/authentication/login_screen.dart';
-import 'package:myfirstproject/screen/profile/profile_page.dart';
-import 'package:myfirstproject/screen/settings/about_us.dart';
-import 'package:myfirstproject/screen/settings/term&condition.dart';
+import 'package:myfirstproject/authentication/login_screen.dart';
+import 'package:myfirstproject/profile/profile_page.dart';
+import 'package:myfirstproject/settings/about_us.dart';
+import 'package:myfirstproject/settings/term&condition.dart';
 import 'package:myfirstproject/widgets/utils.dart';
 
 class SettingsPage extends StatefulWidget {

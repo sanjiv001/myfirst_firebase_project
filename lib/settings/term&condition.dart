@@ -1,7 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstproject/screen/settings/privacy_policy.dart';
+import 'package:myfirstproject/settings/privacy_policy.dart';
 
 class TermsOfUse extends StatelessWidget {
    static const id = "/TermsOfUse";
